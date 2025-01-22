@@ -1,4 +1,5 @@
 import React from "react";
+import "./UsersPage.css"
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SocialAPI } from "../../api/api";
@@ -8,23 +9,27 @@ const UsersPage = () => {
   const dispatch = useDispatch();
 
   const { users } = useSelector((state) => state.usersPage);
-  console.log(users);
 
   useEffect(() => {
     SocialAPI.getUsers().then((res) => {
       dispatch(getUsersAC(res.data.items));
     });
-  }, []);
+  }, [dispatch]);
+
   return (
-    <div className="users-page">
-      {users.map((user) => {
-        return (
-          <li>
-            <h2>{user.name}</h2>
-          </li>
-        );
-      })}
+    <>
+        <h1 className="titleName">User Names</h1>  
+   <div className="users-page">
+      {users.map((user) => (
+        <div className="user-card" key={user.id}>
+          <div className="user-name">
+            <h2>NAME: {user.name}</h2>
+            <h3>ID: {user.id}</h3>
+          </div>
+        </div>
+      ))}
     </div>
+    </>
   );
 };
 
