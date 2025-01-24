@@ -1,34 +1,11 @@
 .users-page {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 21px;
     padding: 20px;
     background-color: #2b2b2bb6;
     justify-content: center;
   }
-  
-  .user-card {
-    background: #ffffffec;
-    border: 2px solid #000000;
-    border-radius: 8px;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0 6px 6px  rgba(0, 0, 0, 0.281);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .user-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 0px 8px 1px rgb(2, 187, 178);
-  }
-  
-  .user-name {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #000000;
-    text-align: center;
-  }
-  
   
   .titleName{
     padding: 0px;
@@ -37,4 +14,8 @@
     text-align: center;
     color: white;
     background-color: #2b2b2bb6;
+  }
+
+  .loading{
+    color: white;
   }
